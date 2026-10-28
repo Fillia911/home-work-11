@@ -1,0 +1,279 @@
+:root {
+  --black: #000;
+  --white: #fff;
+  --gray: #555;
+  --gray-300: #999;
+  --gray-900: #222;
+  --brown: #402F2C;
+  --green: #6FB587;
+  --cream: #F9F6F5;
+
+  --animation-duration: .3s;
+  --animation-timing-function: ease-in-out;
+}
+
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  color: var(--gray);
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--black);
+}
+
+h1 {
+  font-size: 56px;
+}
+
+p, ul, ol {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.btn {
+  transition-property: background;
+  transition-duration: var(--animation-duration);
+  transition-timing-function: var(--animation-timing-function);
+
+  display: inline-block;
+  background: var(--brown);
+  padding: 15px 30px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--white);
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn:where(:hover, :focus-visible) {
+  background: var(--green);
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+header {
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--gray-900);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.logo:after {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: var(--gray-900);
+}
+
+nav ul {
+  display: flex;
+  gap: 40px;
+}
+
+nav a {
+  transition-property: color;
+  transition-duration: var(--animation-duration);
+  transition-timing-function: var(--animation-timing-function);
+
+  padding: 40px 0;
+  display: block;
+  color: var(--gray-900);
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+nav a:where(:hover, :focus-visible) {
+  color: var(--green);
+}
+
+.external-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.external-links a:where(:hover, :focus-visible) {
+  fill: var(--green);
+}
+
+.external-links svg {
+  transition-property: fill;
+  transition-duration: var(--animation-duration);
+  transition-timing-function: var(--animation-timing-function);
+
+  display: block;
+  width: 24px;
+  aspect-ratio: 1;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 745px;
+  position: relative;
+  padding-block: 150px 50px;
+  background-color: var(--cream);
+  background-image: url('../images/background.png');
+  background-size: auto calc(100% - 150px);
+  background-repeat: no-repeat;
+  background-position: right max(0px, calc(50vw - 720px)) top 150px;
+  display: flex;
+  align-items: center;
+}
+
+.hero__content {
+  max-width: 620px;
+}
+
+.hero__content > *:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.hero__content > .hero__form {
+  margin-bottom: 60px;
+}
+
+.hero__content p {
+  max-width: 520px;
+}
+
+.hero__form {
+  position: relative;
+  max-width: 325px;
+}
+
+.hero__form input[type="text"] {
+  width: 100%;
+  background: var(--white);
+  padding: 15px 50px 15px 15px;
+  border: none;
+  font-size: 14px;
+  color: var(--black);
+}
+
+.hero__form input[type="text"]::placeholder {
+  color: var(--gray-300);
+}
+
+.hero__form button {
+  transition-property: background;
+  transition-duration: var(--animation-duration);
+  transition-timing-function: var(--animation-timing-function);
+
+  width: 30px;
+  aspect-ratio: 1;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  translate: 0 -50%;
+  display: block;
+  background: var(--brown);
+  padding: 7px;
+  border: none;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.hero__form button:where(:hover, :focus-visible) {
+  background: var(--green);
+}
+
+.hero__form button svg {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  fill: var(--white)
+}
+
+.hero__arrows {
+  width: 145px;
+  height: 135px;
+  display: flex;
+  background: var(--cream);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50% 0;
+}
+
+.hero__arrows li {
+  flex-grow: 1;
+}
+
+.hero__arrows button {
+  --_arrow-color: var(--gray-900);
+
+  transition-property: background, scale;
+  transition-duration: var(--animation-duration);
+  transition-timing-function: var(--animation-timing-function);
+
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.hero__arrows button:where(:hover, :focus-visible) {
+  --_arrow-color: var(--green);
+
+  scale: 1.15;
+}
+
+.hero__arrows svg {
+  transition-property: fill;
+  transition-duration: var(--animation-duration);
+  transition-timing-function: var(--animation-timing-function);
+
+  display: block;
+  width: 40px;
+  aspect-ratio: 1;
+  fill: var(--_arrow-color);
+}
