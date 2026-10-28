@@ -46,7 +46,7 @@ a {
   text-decoration: none;
 }
 
-img {
+img, svg {
   display: block;
   width: 100%;
   height: auto;
@@ -144,7 +144,6 @@ nav a:where(:hover, :focus-visible) {
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--animation-timing-function);
 
-  display: block;
   width: 24px;
   aspect-ratio: 1;
 }
@@ -223,7 +222,6 @@ nav a:where(:hover, :focus-visible) {
 }
 
 .hero__form button svg {
-  display: block;
   width: 100%;
   aspect-ratio: 1;
   fill: var(--white)
@@ -272,7 +270,6 @@ nav a:where(:hover, :focus-visible) {
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--animation-timing-function);
 
-  display: block;
   width: 40px;
   aspect-ratio: 1;
   fill: var(--_arrow-color);
